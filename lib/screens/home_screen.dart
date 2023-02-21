@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:read_qr/screens/scanner_screen.dart';
 import 'package:read_qr/theme/colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,19 +37,24 @@ class HomeScreen extends StatelessWidget {
                   width: double.infinity,
                   height: 48.0,
                   child: ElevatedButton(
-                      onPressed: () {}, 
-                      child: Text("Escanear codigó QR",                   
-                      style: TextStyle(
-                        color: kBrandBlack,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w500
-                      ),),
+                      onPressed: () {
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => ScannerScreen()));
+                      }, 
                       style: ElevatedButton.styleFrom(
                         backgroundColor: kBrandGreen,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14.0)
                         )
-                      ),),
+                      ),
+                      child: const Text("Escanear codigó QR",                   
+                        style: TextStyle(
+                          color: kBrandBlack,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w500
+                        ),
+                      ),
+                  ),
                 ),
                 TextButton(
                   
