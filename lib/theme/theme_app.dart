@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:read_qr/theme/colors.dart';
 
 class ThemeApp{
-  static const Color black = Color(0xFF12151A);
+  static final ThemeData configTheme = ThemeData.light().copyWith(
+    scaffoldBackgroundColor: kBrandBlack,
+    textTheme: GoogleFonts.montserratTextTheme(),
+  );
 }

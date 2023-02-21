@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:read_qr/theme/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,22 +10,22 @@ class HomeScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-        backgroundColor: Color(0xFF12151A),
+        backgroundColor: kBrandBlack,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                Text("Read and Save QR", style: GoogleFonts.montserrat(
+                const Text("Read and Save QR", style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
                   fontWeight: FontWeight.w700
                 ),),
                 const SizedBox(height: 12.0,),
-                Text(
+                const Text(
                     "Manage the qr codes of your preference and access whenever you want", 
                   textAlign: TextAlign.center, 
-                  style: GoogleFonts.montserrat(
+                  style: TextStyle(
                   color: Colors.white70,
                   fontSize: 14.0,
                   fontWeight: FontWeight.w400
@@ -34,17 +35,31 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   height: 48.0,
-
                   child: ElevatedButton(
-                      onPressed: () {}, child: Text("Escanear codigó QR"),
+                      onPressed: () {}, 
+                      child: Text("Escanear codigó QR",                   
+                      style: TextStyle(
+                        color: kBrandBlack,
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500
+                      ),),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xff29F5BE),
+                        backgroundColor: kBrandGreen,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14.0)
                         )
                       ),),
                 ),
-                ElevatedButton(onPressed: () {}, child: Text("Ver el historial")),
+                TextButton(
+                  
+                  onPressed: () {},
+                  child: Text("Ver el historial",
+                  style: TextStyle(
+                    color: kBrandGreen,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w500
+                  ))
+                  ),
               ],
             ),
           ),

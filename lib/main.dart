@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:read_qr/screens/screens.dart';
+import 'package:read_qr/theme/theme_app.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -9,9 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Read QR",
+      theme: ThemeApp.configTheme,
       home: HomeScreen()
     );
   }
