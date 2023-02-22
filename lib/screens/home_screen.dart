@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:read_qr/screens/scanner_screen.dart';
 import 'package:read_qr/theme/colors.dart';
+import 'package:read_qr/widgets/common_button_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,11 +16,12 @@ class HomeScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text("Read and Save QR", style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
-                  fontWeight: FontWeight.w700
+                  fontWeight: FontWeight.w800
                 ),),
                 const SizedBox(height: 12.0,),
                 const Text(
@@ -33,39 +34,31 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Image.asset("assets/images/qr.png", width: width * 0.80,),
+                CommonButtonWidget(
+                  onPressed: (){
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context)=>ScannerScreen())
+                    );
+                  }, 
+                  text: "Escanear QR",
+                ),
+                const SizedBox(height: 20.0,),
                 SizedBox(
                   width: double.infinity,
-                  height: 48.0,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => ScannerScreen()));
-                      }, 
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: kBrandGreen,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14.0)
-                        )
-                      ),
-                      child: const Text("Escanear codigó QR",                   
-                        style: TextStyle(
-                          color: kBrandBlack,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500
-                        ),
-                      ),
-                  ),
+                  child: TextButton(
+                    
+                    onPressed: () {},
+                    child: const Text(
+                      "Ver el historial",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        color: kBrandGreen,
+                        fontSize: 14.0,
+                      )
+                    )
+                    ),
                 ),
-                TextButton(
-                  
-                  onPressed: () {},
-                  child: Text("Ver el historial",
-                  style: TextStyle(
-                    color: kBrandGreen,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w500
-                  ))
-                  ),
               ],
             ),
           ),
