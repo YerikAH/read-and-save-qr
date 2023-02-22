@@ -105,9 +105,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
                   ),
                   const SizedBox(height:18.0),
                   CommonButtonWidget(
-                    onPressed: urlData.isNotEmpty ? (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
-                    }:null,
+                    onPressed: !urlData.isNotEmpty ? () => Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen())):null,
                     text: "Registrar",
                   )
                 ],

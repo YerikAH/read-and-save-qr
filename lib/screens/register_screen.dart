@@ -31,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
           CommonTextFielWidget(hintText: "Ingresa un titúlo...",),
           const SizedBox(height: 15.0,),
           CommonTextFielWidget(hintText: "Ingresa una observación...",),
-          const SizedBox(height: 15.0,),
+          const SizedBox(height: 20.0,),
           CommonButtonWidget(onPressed: (){}, text: "Guardar",)
         ],
         )
