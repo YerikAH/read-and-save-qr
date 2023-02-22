@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CommonTextFielWidget extends StatelessWidget {
-   
-  const CommonTextFielWidget({Key? key}) : super(key: key);
+  String hintText;
+  CommonTextFielWidget({super.key, required this.hintText});
   
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class CommonTextFielWidget extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white.withOpacity(0.12),
-        hintText: "Ingresa un título",
+        hintText: hintText,
         hintStyle: const TextStyle(
           color: Colors.white54,
         ),

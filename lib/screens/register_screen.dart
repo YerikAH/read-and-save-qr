@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:read_qr/widgets/commom_textfield_widget.dart';
+import 'package:read_qr/widgets/common_button_widget.dart';
 
 class RegisterScreen extends StatelessWidget {
    
@@ -10,8 +11,8 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
-        children: const [
-        Text(
+        children: [
+        const Text(
             "Registrar contenido",
             style: TextStyle(
               color: Colors.white,
@@ -19,7 +20,7 @@ class RegisterScreen extends StatelessWidget {
               fontWeight: FontWeight.w700
             ),
           ),
-          Text(
+          const Text(
             "Por favor ingresa los campos requeridos",
             style: TextStyle(
               color: Colors.white70,
@@ -27,7 +28,11 @@ class RegisterScreen extends StatelessWidget {
               fontWeight: FontWeight.w400
             ),
           ),
-          CommonTextFielWidget()
+          CommonTextFielWidget(hintText: "Ingresa un titúlo...",),
+          const SizedBox(height: 15.0,),
+          CommonTextFielWidget(hintText: "Ingresa una observación...",),
+          const SizedBox(height: 15.0,),
+          CommonButtonWidget(onPressed: (){}, text: "Guardar",)
         ],
         )
       )
