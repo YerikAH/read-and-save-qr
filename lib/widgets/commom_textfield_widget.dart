@@ -2,11 +2,19 @@ import 'package:flutter/material.dart';
 
 class CommonTextFielWidget extends StatelessWidget {
   String hintText;
-  CommonTextFielWidget({super.key, required this.hintText});
+  TextEditingController controller;
+  bool? isRequired;
+  CommonTextFielWidget({
+    super.key, 
+    required this.hintText ,   
+    required this.controller,
+    this.isRequired,
+  });
   
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      controller: controller,
       style: const TextStyle(
         color: Colors.white
       ),
@@ -29,8 +37,18 @@ class CommonTextFielWidget extends StatelessWidget {
         enabledBorder: OutlineInputBorder(           
           borderRadius: BorderRadius.circular(7.0),
           borderSide: BorderSide.none
-        )
+        ),
+        errorBorder:  OutlineInputBorder(
+          borderRadius: BorderRadius.circular(14.0),
+          borderSide: BorderSide.none,
+        ),
       ),
+      validator: (String? value) {
+        if (value != null && value.isEmpty && isRequired == true) {
+          return "Campo obligatorio";
+        }
+        return null;
+      },
     );
   }
 }
