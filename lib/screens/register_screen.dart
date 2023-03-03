@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:read_qr/db/db_admin.dart';
 import 'package:read_qr/models/models.dart';
 import 'package:intl/intl.dart';
 import 'package:read_qr/widgets/commom_textfield_widget.dart';
@@ -73,6 +74,9 @@ class RegisterScreen extends StatelessWidget {
               child: CommonButtonWidget(
                 onPressed: (){
                 if (_formKey.currentState!.validate()) {
+                  print("Hola mundo");
+                  FocusScopeNode myFocusScope = FocusScope.of(context);
+                  myFocusScope.unfocus();
                   DateFormat myFormat = DateFormat("dd/MM/yyyy hh:mm");
                   String myDate = myFormat.format(DateTime.now());
                   QRModel mantequilla = QRModel(
@@ -82,6 +86,9 @@ class RegisterScreen extends StatelessWidget {
                       datetime: myDate,
                   );
                   print(mantequilla.toJson());
+
+                  DBAdmin admin = DBAdmin();
+                  admin.getQRList();
                 }
                 }, text: "Guardar",
                 ),
