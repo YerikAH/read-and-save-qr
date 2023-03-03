@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Read QR",
       theme: ThemeApp.configTheme,
-      home: HomeScreen()
+      home: RegisterScreen()
     );
   }
 }

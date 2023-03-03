@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:read_qr/widgets/commom_textfield_widget.dart';
 import 'package:read_qr/widgets/common_button_widget.dart';
 
@@ -9,32 +10,65 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
+      body: Stack(
         children: [
-        const Text(
-            "Registrar contenido",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-              fontWeight: FontWeight.w700
-            ),
+          SafeArea(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  
+                children: [
+                const Text(
+                    "Registrar contenido",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w700
+                    ),
+                  ),
+                  const Text(
+                    "Por favor ingresa los campos requeridos",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w400
+                    ),
+                  ),
+                  const SizedBox(height: 30.0,),
+                  CommonTextFielWidget(hintText: "Ingresa un titúlo...",),
+                  const SizedBox(height: 15.0,),
+                  CommonTextFielWidget(hintText: "Ingresa una observación...",),
+                  const SizedBox(height: 20.0,),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16.0)
+                    ),
+                    child: QrImage(
+                      data: '12455', 
+                      version: QrVersions.auto,
+                      size:200.0
+                    ),
+                  ),
+                  const SizedBox(height: 20.0,),
+
+                ],
+                ),
+              ),
+            )
           ),
-          const Text(
-            "Por favor ingresa los campos requeridos",
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 14.0,
-              fontWeight: FontWeight.w400
-            ),
-          ),
-          CommonTextFielWidget(hintText: "Ingresa un titúlo...",),
-          const SizedBox(height: 15.0,),
-          CommonTextFielWidget(hintText: "Ingresa una observación...",),
-          const SizedBox(height: 20.0,),
-          CommonButtonWidget(onPressed: (){}, text: "Guardar",)
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: CommonButtonWidget(
+                onPressed: (){}, text: "Guardar",
+                ),
+            )
+            )
         ],
-        )
       )
     );
   }

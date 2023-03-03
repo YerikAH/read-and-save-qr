@@ -16,6 +16,7 @@ class CommonTextFielWidget extends StatelessWidget {
         hintText: hintText,
         hintStyle: const TextStyle(
           color: Colors.white54,
+          fontSize: 14.0
         ),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16.0,
