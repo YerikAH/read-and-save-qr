@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:read_qr/models/models.dart';
+import 'package:intl/intl.dart';
 import 'package:read_qr/widgets/commom_textfield_widget.dart';
 import 'package:read_qr/widgets/common_button_widget.dart';
 
@@ -64,7 +66,18 @@ class RegisterScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: CommonButtonWidget(
-                onPressed: (){}, text: "Guardar",
+                onPressed: (){
+                  DateFormat myFormat = DateFormat("dd/MM/yyyy hh:mm");
+                  String myDate = myFormat.format(DateTime.now());
+
+                  QRModel mantequilla = QRModel(
+                      title: "",
+                      observation:"",
+                      url: "",
+                      datetime: myDate,
+                  );
+                  print(mantequilla.toJson());
+                }, text: "Guardar",
                 ),
             )
             )
