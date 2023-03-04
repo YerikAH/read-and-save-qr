@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:read_qr/screens/history_screen.dart';
 import 'package:read_qr/screens/scanner_screen.dart';
 import 'package:read_qr/theme/colors.dart';
 import 'package:read_qr/widgets/common_button_widget.dart';
@@ -48,7 +49,12 @@ class HomeScreen extends StatelessWidget {
                   width: double.infinity,
                   child: TextButton(
                     
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)=> const HistoryPage())
+                      );
+                    },
                     child: const Text(
                       "Ver el historial",
                       style: TextStyle(

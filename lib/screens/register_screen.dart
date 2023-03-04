@@ -8,8 +8,8 @@ import 'package:read_qr/widgets/commom_textfield_widget.dart';
 import 'package:read_qr/widgets/common_button_widget.dart';
 
 class RegisterScreen extends StatelessWidget {
-   
-  RegisterScreen({Key? key}) : super(key: key);
+  String url;
+  RegisterScreen({super.key, required this.url});
   
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _observationController = TextEditingController();
@@ -56,7 +56,7 @@ class RegisterScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16.0)
                       ),
                       child: QrImage(
-                        data: '12455', 
+                        data: url, 
                         version: QrVersions.auto,
                         size:200.0
                       ),
@@ -82,7 +82,7 @@ class RegisterScreen extends StatelessWidget {
                   QRModel mantequilla = QRModel(
                       title: _titleController.text,
                       observation:_observationController.text,
-                      url: "",
+                      url: url,
                       datetime: myDate,
                   );
                   Future.delayed(const Duration(milliseconds: 400), () {
