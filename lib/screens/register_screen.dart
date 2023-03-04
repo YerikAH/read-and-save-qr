@@ -3,6 +3,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:read_qr/db/db_admin.dart';
 import 'package:read_qr/models/models.dart';
 import 'package:intl/intl.dart';
+import 'package:read_qr/screens/home_screen.dart';
 import 'package:read_qr/widgets/commom_textfield_widget.dart';
 import 'package:read_qr/widgets/common_button_widget.dart';
 
@@ -74,7 +75,6 @@ class RegisterScreen extends StatelessWidget {
               child: CommonButtonWidget(
                 onPressed: (){
                 if (_formKey.currentState!.validate()) {
-                  print("Hola mundo");
                   FocusScopeNode myFocusScope = FocusScope.of(context);
                   myFocusScope.unfocus();
                   DateFormat myFormat = DateFormat("dd/MM/yyyy hh:mm");
@@ -85,8 +85,30 @@ class RegisterScreen extends StatelessWidget {
                       url: "",
                       datetime: myDate,
                   );
-                  print(mantequilla.toJson());
-
+                  Future.delayed(const Duration(milliseconds: 400), () {
+                    DBAdmin().insertQR(mantequilla).then((value) {
+                      if (value >= 0) {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()),
+                          (route) => false
+                        );
+                        //Snackbar
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor: const Color(0xffbc00dd),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0),
+                            ),
+                            behavior: SnackBarBehavior.floating,
+                            content: const Text(
+                                "Se registró tu QR correctamente."),
+                          ),
+                        );
+                      }
+                    });
+                  });
                   DBAdmin admin = DBAdmin();
                   admin.getQRList();
                 }
