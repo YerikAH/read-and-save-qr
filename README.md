@@ -1,4 +1,7 @@
 # Read and Save QR
+A mobile application to scan QR codes, save them, enter the QR link. 
+
+
 ## Development 
 
 ### Project structure
