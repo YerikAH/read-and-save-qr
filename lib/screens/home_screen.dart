@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:read_qr/screens/history_screen.dart';
-import 'package:read_qr/screens/scanner_screen.dart';
+import 'package:read_qr/screens/screens.dart';
 import 'package:read_qr/theme/colors.dart';
 import 'package:read_qr/widgets/common_button_widget.dart';
 
@@ -42,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context)=>ScannerScreen())
                     );
                   }, 
-                  text: "Escanear QR",
+                  text: "Scan QR",
                 ),
                 const SizedBox(height: 20.0,),
                 SizedBox(
@@ -52,11 +51,11 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (context)=> const HistoryPage())
+                        MaterialPageRoute(builder: (context)=> const HistoryScreen())
                       );
                     },
                     child: const Text(
-                      "Ver el historial",
+                      "View history",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         color: kBrandGreen,

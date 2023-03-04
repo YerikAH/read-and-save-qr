@@ -5,6 +5,7 @@ import 'package:read_qr/theme/colors.dart';
 class ThemeApp{
   static final ThemeData configTheme = ThemeData.light().copyWith(
     scaffoldBackgroundColor: kBrandBlack,
+    useMaterial3: true,
     textTheme: GoogleFonts.montserratTextTheme(),
   );
 }

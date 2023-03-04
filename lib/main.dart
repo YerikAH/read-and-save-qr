@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Read QR",
+      title: "Read and Save QR",
       theme: ThemeApp.configTheme,
       home: const HomeScreen()
     );

@@ -3,7 +3,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:read_qr/db/db_admin.dart';
 import 'package:read_qr/models/models.dart';
 import 'package:intl/intl.dart';
-import 'package:read_qr/screens/home_screen.dart';
+import 'package:read_qr/screens/screens.dart';
 import 'package:read_qr/widgets/commom_textfield_widget.dart';
 import 'package:read_qr/widgets/common_button_widget.dart';
 
@@ -29,7 +29,7 @@ class RegisterScreen extends StatelessWidget {
                   child: Column(
                   children: [
                   const Text(
-                      "Registrar contenido",
+                      "Register content",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
@@ -37,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      "Por favor ingresa los campos requeridos",
+                      "Please enter the required fields",
                       style: TextStyle(
                         color: Colors.white70,
                         fontSize: 14.0,
@@ -45,9 +45,9 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 30.0,),
-                    CommonTextFielWidget(hintText: "Ingresa un titúlo...",controller: _titleController, isRequired: true),
+                    CommonTextFielWidget(hintText: "Enter a title...",controller: _titleController, isRequired: true),
                     const SizedBox(height: 15.0,),
-                    CommonTextFielWidget(hintText: "Ingresa una observación...",controller: _observationController, isRequired: false),
+                    CommonTextFielWidget(hintText: "Enter a description...",controller: _observationController, isRequired: false),
                     const SizedBox(height: 20.0,),
                     Container(
                       padding: const EdgeInsets.all(8.0),
@@ -103,7 +103,7 @@ class RegisterScreen extends StatelessWidget {
                             ),
                             behavior: SnackBarBehavior.floating,
                             content: const Text(
-                                "Se registró tu QR correctamente."),
+                                "Your QR was registered correctly."),
                           ),
                         );
                       }
@@ -112,7 +112,7 @@ class RegisterScreen extends StatelessWidget {
                   DBAdmin admin = DBAdmin();
                   admin.getQRList();
                 }
-                }, text: "Guardar",
+                }, text: "Save",
                 ),
             )
             )

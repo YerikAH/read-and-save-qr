@@ -94,7 +94,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    urlData.isEmpty ? "Por favor escanea un código QR.": urlData,
+                    urlData.isEmpty ? "Please scan a QR code.": urlData,
                     maxLines: 2,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
@@ -105,9 +105,8 @@ class _ScannerScreenState extends State<ScannerScreen> {
                   ),
                   const SizedBox(height:18.0),
                   CommonButtonWidget(
-                    // onPressed: urlData.isEmpty ?  () => Navigator.push(context, MaterialPageRoute(builder: (context)=> RegisterScreen(url: urlData,))) : null,
                     onPressed: urlData.isEmpty ?null: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>  RegisterScreen(url: urlData))),
-                    text: "Registrar",
+                    text: "Register",
                   )
                 ],
               ),

@@ -12,14 +12,11 @@ class CommonButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return  SizedBox(
       width: double.infinity,
       height: 48.0,
       child: ElevatedButton(
           onPressed: () {
-            print(onPressed != null);
             onPressed != null ? onPressed!(): null
             ;
           }, 

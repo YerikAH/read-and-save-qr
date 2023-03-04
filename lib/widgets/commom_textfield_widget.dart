@@ -45,7 +45,7 @@ class CommonTextFielWidget extends StatelessWidget {
       ),
       validator: (String? value) {
         if (value != null && value.isEmpty && isRequired == true) {
-          return "Campo obligatorio";
+          return "Obligatory field";
         }
         return null;
       },
