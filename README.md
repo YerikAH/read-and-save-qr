@@ -6,7 +6,13 @@ A mobile application to scan QR codes, save them, enter the QR link.
 
 ### Project structure
 
+In the `assets` folder are all the files used by the application.
 
+- **themes:** Files that contain the theme of the application.
+- **screen:** The screen that the user can see.
+- **widget:** They are like components, the screen folder depends on them.
+- **models:** Models i use in db folder.
+- **db:** I use it as a database in the application.
 
 
 ### My experience developing
@@ -38,10 +44,10 @@ flutter run
 If you want to try the application on android you can see [releases](https://github.com/YerikAH/read-and-save-qr/releases/tag/app), and download the apk, it weighs 20MB.
 
 ### Screenshots
-<img src="./screenshots/ss-1" width="375" />
-<img src="./screenshots/ss-2" width="375" />
-<img src="./screenshots/ss-3" width="375" />
-<img src="./screenshots/ss-4" width="375" />
+<img src="./screenshots/ss-2.jpg" width="375" />
+<img src="./screenshots/ss-1.jpg" width="375" />
+<img src="./screenshots/ss-3.jpg" width="375" />
+<img src="./screenshots/ss-4.jpg" width="375" />
 
 ## Author
 
